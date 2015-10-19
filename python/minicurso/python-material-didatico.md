@@ -138,9 +138,9 @@ continuar = raw_input()
 if continuar == 'sim':
   print 'Continuando'
   print '...'
-elif continuar == 'nao'
+elif continuar == 'nao':
   print 'Encerrando'
-else
+else:
   print 'Erro. Favor digitar sim ou nao'.
 ```
 
@@ -198,7 +198,10 @@ class ClasseSemAtributos:
         return 200
 
 obj1 = ClasseSemAtributos()
+obj1.metodo_1_sem_retorno()
+
 obj2 = ClasseSemAtributos()
+valor = obj2.metodo_2_com_retorno()
 ```
 
 ```python
