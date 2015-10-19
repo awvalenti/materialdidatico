@@ -16,6 +16,12 @@ nome = raw_input()
 print 'Ola, %s!' % nome
 ```
 
+## Entrada padrão (outros tipos)
+```python
+numero = input()
+print 'Sucessor: %d' % (numero + 1)
+```
+
 ## Comentário
 ```python
 # Esta linha começa com cerquilha e é um comentário
