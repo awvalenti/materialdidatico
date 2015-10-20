@@ -83,42 +83,54 @@ z = [3, 4]
 z = 5.0  # atribuindo a z novamente. lista anterior é perdida.
 ```
 
-## Strings e listas
+## Manipulação de listas ou strings
 ```python
-s = [0, 10, 20, 30]
+lista = [0, 10, 20, 30]
 
 # Tamanho
-len(s)  # 4
+len(lista)  # 4
 
 # Indexação na ordem direta
-s[0]    # 0
-s[1]    # 10
-s[2]    # 20
-s[3]    # 30
+lista[0]    # 0
+lista[1]    # 10
+lista[2]    # 20
+lista[3]    # 30
 
 # Indexação na ordem inversa
-s[-1]   # 30
-s[-2]   # 20
-s[-3]   # 10
-s[-4]   # 0
-
-# Sublista
-s[1:3]  # [10, 20]
-s[1:3] = [15, 25]   # Altera a lista para [0, 15, 25, 30]
+lista[-1]   # 30
+lista[-2]   # 20
+lista[-3]   # 10
+lista[-4]   # 0
 
 # Cópia da lista
-copia = s[:]
+copia = lista[:]
+
+# Sublista a partir de certo índice
+lista[1:]   # [10, 20, 30]
+lista[2:]   # [20, 30]
+lista[3:]   # [30]
+lista[4:]   # []
+
+# Sublista até certo índice
+lista[:1]   # [0]
+lista[:2]   # [0, 10]
+lista[:3]   # [0, 10, 20]
+lista[:4]   # [0, 10, 20, 30]
+
+# Sublista de um índice a outro
+lista[1:3]  # [10, 20]
+lista[1:3] = [15, 25]   # Altera a lista para [0, 15, 25, 30]
 ```
 
 ## Igualdade
 ```python
 # Vendo se o conteúdo é igual
-s == s      # True
-s == copia  # True
+lista == lista   # True
+lista == copia   # True
 
 # Vendo se o objeto é o mesmo (ou seja, vendo se estão na mesma posição de memória)
-s is s      # True
-copia is s  # False
+lista is lista   # True
+copia is lista   # False
 ```
 
 ## Condicional
@@ -156,7 +168,7 @@ for i in range(10): print i   # numeros de 0 a 9
 ```
 
 ```python
-for i in range(10):
+for i in range(3):
   print 'Estamos no %d. Deseja continuar?' % i
   continuar = raw_input()
   if (continuar == 'nao'): break
