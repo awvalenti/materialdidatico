@@ -3,7 +3,7 @@
 ## Saída padrão
 ```javascript
 alert('Ola, mundo! (em janela modal)');
-console.log('Ola, mundo! (no console de JavaScript do navegador)')
+console.log('Ola, mundo! (no console de JavaScript do navegador)');
 ```
 
 ## Entrada padrão (strings)
