@@ -7,6 +7,12 @@
   1. Vetor
   1. Objeto
 1. Para cada valor digitado no exercício anterior, atribua-o a uma variável e imprima o valor dessa variável usando os comandos ```alert``` e ```console.log```.
+1. Verifique o que acontece ao se tentar cada uma das operações com vetor abaixo:
+  1. alterar o tamanho de um vetor explicitamente atribuindo-se um novo valor à propriedade ```length```
+  1. num vetor de tamanho 3, atribuir-se um valor à posição 5
+  1. usar como índice um número em forma de string (como ```'3'```)
+  1. usar como índice uma string, mesmo (como ```'texto'```)
+  1. usar como índice a palavra ```'length'```
 1. Imprima os números inteiros de 11 a 45.
 1. Imprima os números de 30 a 60 em passos de 3 (30, 33, 36, ...).
 1. Leia duas strings do usuário. Determine qual tem o maior tamanho e escreva-a na tela.
