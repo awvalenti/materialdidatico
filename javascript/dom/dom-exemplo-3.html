@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>JavaScript - exemplo 3</title>
+</head>
+<body>
+
+<ul>
+  <li>Primeiro item</li>
+  <li>Segundo item</li>
+  <li>Terceiro item</li>
+</ul>
+
+<script>
+alert('A pagina tem ' + document.getElementsByTagName('li').length +
+    ' elementos <li>. Vamos adicionar um.');
+var novoLi = document.createElement('li');
+novoLi.textContent = 'Quarto item';
+document.getElementsByTagName('ul')[0].appendChild(novoLi);
+
+alert('Vamos adicionar mais um.');
+var novoLi = document.createElement('li');
+novoLi.textContent = 'Quinto item';
+document.getElementsByTagName('ul')[0].appendChild(novoLi);
+</script>
+
+</body>
+</html>
