@@ -53,8 +53,7 @@ Parar criar uma página HTML referenciando um arquivo JavaScript, use o exemplo 
     // INSERIR CÓDIGO AQUI
 
     if (idade != -1) {
-    // push acrescenta elemento ao fim do vetor
-    idades.push(idade);
+      idades.push(idade);  // acrescenta elemento ao fim do vetor
     }
   } while (idade != -1);
 
@@ -67,7 +66,7 @@ Parar criar uma página HTML referenciando um arquivo JavaScript, use o exemplo 
   ```
 
 1. Crie um vetor com alguns elementos quaisquer e atribua-o a uma variável. Faça as operações abaixo e verifique o que acontece com o vetor:
-  1. atribuir um novo valor à propriedade ```length``` (ou seja, ```vetor.length = [novo tamanho]```)
+  1. atribuir um novo valor à propriedade ```length``` (ou seja, ```vetor.length = ...;```)
 
   1. num vetor de tamanho 3, atribuir um valor à posição 5
 
