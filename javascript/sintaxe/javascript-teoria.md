@@ -83,23 +83,52 @@ z = 5.0;  // atribuindo a z novamente. vetor anterior é perdido.
 
 ## Vetores
 ```javascript
-var s = [0, 10, 20, 30];
+var v = [0, 10, 20, 30];
 
 // Tamanho
-s.length  // 4
+v.length  // 4
 
 // Indexação
-s[0]    // 0
-s[1]    // 10
-s[2]    // 20
-s[3]    // 30
+v[0]    // 0
+v[1]    // 10
+v[2]    // 20
+v[3]    // 30
 
 // Subvetor (cópia; não altera original)
-s.slice(1, 3)  // [10, 20]
+v.slice(1, 3)  // [10, 20]
 
 // Fazer cópia do vetor inteiro
-var copia = s.slice();
+var copiaDeV = v.slice();
 ```
+
+## Objetos
+```javascript
+var obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+  str: 'teste'
+};
+
+// Leitura de propriedades usando ponto
+obj.a    // 1
+obj.b    // 2
+obj.c    // 3
+obj.str  // 'teste'
+
+// Leitura de propriedades usando colchetes
+obj['a']    // 1
+obj['b']    // 2
+obj['c']    // 3
+obj['str']  // 'teste'
+
+// Escrita em propriedades
+obj.a = 10;
+obj['b'] = 20;
+obj.c = obj.a + obj.b;
+console.log(obj['c']);   // 30
+```
+Mais informações sobre objetos no [guia do MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 ## Igualdade
 ```javascript
