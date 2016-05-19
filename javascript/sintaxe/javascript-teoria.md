@@ -241,3 +241,19 @@ if (iara.maiorDeIdade()) {
   console.log(iara.getNome() + " e' maior de idade");
 }
 ```
+
+## Depuração
+O comando ```debugger``` pode ser colocado em qualquer parte do código.
+Ele terá efeito somente se o console do navegador estiver aberto.
+Quando a linha do ```debugger``` for executada, o programa
+será interrompido. Você terá a oportunidade de executar linha por linha,
+conferir os valores das variáveis etc.
+```javascript
+console.log(1);
+for (var i = 0; i < 10; ++i) {
+  console.log(i);
+  if (i >= 5) {
+    debugger;
+  }
+}
+```
