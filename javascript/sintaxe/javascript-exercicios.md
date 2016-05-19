@@ -78,7 +78,7 @@ Parar criar uma página HTML referenciando um arquivo JavaScript, use o exemplo 
 
 ## Série 2
 
-1. No console de JavaScript do seu navegador, digite pelo menos dois valores de cada um dos seguintes tipos de dados:
+1. Usando o console JavaScript do seu navegador, invente dois valores de cada tipo de dados a seguir. Atribua cada valor a uma variável diferente e imprima-a usando ```console.log```:
   1. Número
 
   1. Booleano
@@ -89,16 +89,20 @@ Parar criar uma página HTML referenciando um arquivo JavaScript, use o exemplo 
 
   1. Objeto
 
-1. Para cada valor digitado no exercício anterior, atribua esse vetor a uma variável. Imprima o valor dessa variável usando os comandos ```alert``` e ```console.log```.
-
 1. Imprima os números de 30 a 60 em passos de 3 (30, 33, 36, ...).
 
-1. Leia duas strings do usuário. Determine qual tem o maior tamanho e determine se a outra está contida nela. Por exemplo, ```palavra``` está contida em ```Algumas palavras em um texto```.
+1. Leia duas strings do usuário. Determine qual tem o maior tamanho e determine se a outra está contida nela. Exemplos:
+  - ```aba``` está contida em ```abacate```
+  - ```aba``` está contida em ```Leia o item abaixo```
+  - ```aba``` não está contida em ```Irineu Evangelista de Sousa```
 
-1. Crie uma classe chamada ```Teste```. Ela deve possuir dois métodos, um que retorne sempre ```true``` e o outro que retorne sempre ```false```.
+1. Considere o conceito matemático de intervalo fechado (exemplo: [5, 9]). Leia três valores inteiros: um limite inferior, um limite superior e um valor de teste. Verifique se o valor de teste pertence ao intervalo e imprima essa informação como saída.
+
+1. Crie uma classe chamada ```Teste```. Ela deve possuir dois métodos, um que retorne sempre ```true``` e o outro que retorne sempre ```false```. Crie um objeto dessa classe e use-o para chamar cada um dos métodos.
 
 1. Modifique a classe ```Teste``` anterior para receber no seu construtor um valor booleano. O método que retornava sempre ```true``` agora deve retornar esse valor recebido no construtor. O método que retornava sempre ```false``` agora deve retornar o resultado oposto ao do outro método.
 
-1. Considere o conceito matemático de intervalo fechado (exemplo: [5, 9]). Leia três valores inteiros: um limite inferior, um limite superior e um valor de teste. Verifique se o valor de teste pertence ao intervalo.
+1. Faça a versão 2 do exercício de intervalos. Refatore a versão 1, ou seja, modifique seu código sem modificar seu comportamento. Crie uma função ```pertenceAIntervalo```, que receba um limite inferior, um limite superior e um valor de teste e devolva como resultado ```true``` se o valor de teste pertencer ao intervalo e ```false``` caso contrário. Faça o programa chamar essa função após os valores serem lidos do usuário.
 
-1. Incremente o exercício anterior. Crie uma classe chamada ```Intervalo```, com um construtor recebendo os limites inferior e superior e com um método ```contem```, que receba um valor e retorne um booleano indicando se ele está contido ou não naquele intervalo.
+1. Faça a versão 3 do exercício de intervalos refatorando a versão 2. Crie uma classe chamada ```Intervalo```. Seu construtor deve recebe os limites inferior e superior e armazená-los. Deve haver um método ```contem```, que receba um valor e retorne um booleano indicando se ele está contido ou não naquele intervalo. Faça o programa instanciar um objeto da classe ```Intervalo``` e chamar o método ```contem```.
+ 
