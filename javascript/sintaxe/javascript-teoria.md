@@ -1,5 +1,14 @@
 # Introdução a JavaScript
 
+## Variáveis
+São declaradas com ```var```.
+```javascript
+var a = 1;
+var b = 2;
+a = 3;
+b += a + 1;
+```
+
 ## Saída padrão
 ```javascript
 alert('Ola, mundo! (em janela modal)');
@@ -10,6 +19,12 @@ console.log('Ola, mundo! (no console de JavaScript do navegador)');
 ```javascript
 var nome = prompt('Digite seu nome');
 alert('Ola, ' + nome + '!');
+```
+
+## Entrada padrão (números)
+```javascript
+var idade = Number(prompt('Digite sua idade'));
+alert('Voce tem ' + idade + ' anos de idade');
 ```
 
 ## Comentário
@@ -64,21 +79,12 @@ function g(a, b, c) {
 }
 ```
 
-## Variáveis
-São declaradas com ```var```.
-```javascript
-var a = 1;
-var b = 2;
-a = 3;
-b += a + 1;
-```
-
-Variáveis não tem tipo. Podem receber valores de qualquer tipo.
+Variáveis não são tipadas. Podem receber valores de qualquer tipo.
 ```javascript
 var x = 1;
 var y = 'dois';
 var z = [3, 4];
-z = 5.0;  // atribuindo a z novamente. vetor anterior é perdido.
+z = 5.0;  // z tinha um vetor, agora tem um número. O antigo vetor é perdido.
 ```
 
 ## Vetores
@@ -102,7 +108,21 @@ var copiaDeV = v.slice();
 ```
 
 ## Objetos
+São diferentes de objetos em outras linguagens. Nem precisam de uma classe
+para serem criados. A notação ```{}``` pode ser usada para criar objetos
+literais, diretamente no código, com as propriedades especificadas.
+
 ```javascript
+var pessoa1 = {
+  nome: 'Joao',
+  idade: 23
+};
+
+var pessoa2 = {
+  nome: 'Maria',
+  idade: 2
+};
+
 var obj = {
   a: 1,
   b: 2,
@@ -131,6 +151,10 @@ console.log(obj['c']);   // 30
 Mais informações sobre objetos no [guia do MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 ## Igualdade
+O operador ```==``` compara valor, mas desconsidera o tipo. Assim, o número
+```1``` é considerado igual à string ```'1'```. O operador ```===``` compara
+o valor e o tipo.
+
 ```javascript
 1 == 1     // true
 1 == '1'   // true
@@ -172,24 +196,48 @@ function areaDoCirculo(raio) {
 ```
 
 ## Classes
+Apesar de JavaScript não exigir uma classe para criar um objeto, classes podem
+ser criadas. Na versão mais nova do JavaScript, existe a palavra reservada
+```class```. Porém, o jeito tradicional de criar classes é usando funções.
+
+Qualquer função pode ser usada como classe. Nesse caso, ela atua como construtor
+e, por convenção, seu nome deve começar com letra maiúscula. Outra convenção
+é o uso de ```_``` para iniciar nomes de propriedades ou métodos privados.
+JavaScript não faz nenhum controle de acesso. Cabe ao programador não chamar
+métodos privados fora da classe.
+
 ```javascript
+// Construtor da classe Pessoa
 function Pessoa(nome, idade) {
-  this._nome = nome;
-  this._idade = idade;
+  this._nome = nome;      // Cria uma nova propriedade no objeto chamada _nome
+  this._idade = idade;    // Cria uma nova propriedade no objeto chamada _idade
 }
 
+// Definição de um método da classe Pessoa
 Pessoa.prototype.maiorDeIdade = function() {
   return this._idade >= 18;
 };
 
+// Definição de outro método da classe Pessoa
 Pessoa.prototype.getNome = function() {
   return this._nome;
 };
 
+// Criação de um objeto
 var ulisses = new Pessoa('Ulisses', 39);
+
+// Criação de outro objeto
 var iara = new Pessoa('Iara', 42);
 
+// Chamada de um método
 if (ulisses.maiorDeIdade()) {
-  console.log(iara.getNome());
+  // Chamada de outro método
+  console.log(ulisses.getNome() + " e' maior de idade");
+}
+
+// Chamada de um método
+if (iara.maiorDeIdade()) {
+  // Chamada de outro método
+  console.log(iara.getNome() + " e' maior de idade");
 }
 ```
