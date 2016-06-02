@@ -8,12 +8,15 @@ function adicionarLi() {
 }
 
 function removerLi() {
-  if (qtdItens > 0) {
-    var ul = document.getElementById('minha-lista');
-    ul.removeChild(ul.lastElementChild);
-    --qtdItens;
-    atualizarQtdeItens();
+  if (qtdItens <= 0) {
+    alert('Nenhum item para ser removido.');
+    return;
   }
+
+  var ul = document.getElementById('minha-lista');
+  ul.removeChild(ul.lastElementChild);
+  --qtdItens;
+  atualizarQtdeItens();
 }
 
 function atualizarQtdeItens() {

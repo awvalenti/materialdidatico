@@ -2,5 +2,5 @@ ul#minha-lista {
   width: 5em;
   height: 20em;
   overflow: auto;
-  border: thin solid black;
+  border: thin dotted black;
 }

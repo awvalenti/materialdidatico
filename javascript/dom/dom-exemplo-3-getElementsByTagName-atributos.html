@@ -4,6 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>JavaScript - exemplo 3</title>
+  <style>
+  section {
+    border: thin dotted black;
+  }
+  </style>
 </head>
 
 <body>
@@ -24,22 +29,18 @@
   // Alguns elementos possuem um atributo id. Exemplo:
   //   <section id="s1">
 
-  // ".id" obtem o valor do atributo id. Pode-se fazer isso com qualquer
-  // atributo para obter ou alterar seu valor. Uma excecao e' o atributo class,
-  // que deve ser acessado com ".className", em vez de ".class".
+  // ".id" obtém o valor do atributo id. Pode-se fazer isso com vários
+  // atributos para obter ou alterar seus valores. Uma exceção é o atributo
+  // class, que deve ser acessado com ".className", em vez de ".class".
 
   var secoes = document.getElementsByTagName('section');
-  document.write('<p>Esta pagina tem ' + secoes.length + ' secoes</p>');
+  document.write('<p>Esta pagina tem ' + secoes.length + ' seções.</p>');
 
-  document.write('<p>Id da primeira: ' + secoes[0].id + '</p>');
-  document.write('<p>Classe da primeira: ' + secoes[0].className + '</p>');
+  document.write('<p>A primeira tem id=' + secoes[0].id + ' e classe='
+      + secoes[0].className + '.</p>');
 
-  document.write('<p>Id da segunda: ' + secoes[1].id + '</p>');
-  document.write('<p>Classe da segunda: ' + secoes[1].className + '</p>');
-
-  var elementoMeta = document.getElementsByTagName('meta')[0];
-  document.write('<p>A codificação de caracteres usada foi ' +
-      elementoMeta.charset + '</p>');
+  document.write('<p>A segunda tem id=' + secoes[1].id + ' e classe='
+      + secoes[1].className + '.</p>');
   </script>
 </body>
 
