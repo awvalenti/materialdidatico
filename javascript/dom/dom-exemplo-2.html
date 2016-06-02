@@ -1,34 +1,17 @@
 <!doctype html>
 <html>
 <head>
-<title>JavaScript - exemplo 2</title>
+<title>JavaScript - exemplo 1</title>
 </head>
 <body>
 
-<section id="s1" class="c1">
-  <h2>Primeira sessao</h2>
-</section>
-
-<section id="s2" class="c2">
-  <h2>Segunda sessao</h2>
-</section>
-
 <script>
-// document.getElementsByTagName encontra todos os elementos do documento
-// do tipo especificado.
-
-// ".id" obtem o valor do atributo id. Pode-se fazer isso com qualquer
-// atributo para obter ou alterar seu valor. Uma excecao e' o atributo class,
-// que deve ser acessado com ".className", em vez de ".class".
-
-var secoes = document.getElementsByTagName('section');
-document.write('<p>Esta pagina tem ' + secoes.length + ' secoes</p>');
-
-document.write('<p>Id da primeira: ' + secoes[0].id + '</p>');
-document.write('<p>Classe da primeira: ' + secoes[0].className + '</p>');
-
-document.write('<p>Id da segunda: ' + secoes[1].id + '</p>');
-document.write('<p>Classe da segunda: ' + secoes[1].className + '</p>');
+document.write('<p>Titulo desta pagina: ' +
+    document.head.children[0].textContent + '</p>');
+// "document.head" obtem o elemento <head>. ".children" obtem os filhos
+// de <head>. "[0]" indexa o vetor de filhos de <head>, obtendo o primeiro
+// (e unico) filho: o elemento <title>. ".textContent" obtem o texto
+// contido dentro do elemento <title>.
 </script>
 
 </body>

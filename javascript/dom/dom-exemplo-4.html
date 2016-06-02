@@ -1,55 +1,27 @@
 <!doctype html>
 <html>
 <head>
-<title>JavaScript - exemplo 4</title>
-
-<style>
-ul#minha-lista {
-  width: 5em;
-  height: 20em;
-  overflow: auto;
-  border: thin solid black;
-}
-</style>
-
+<title>JavaScript - exemplo 3</title>
 </head>
 <body>
 
-<!-- Para facilitar, podemos identificar um elemento com o atributo id -->
-<ul id="minha-lista">
+<ul>
+  <li>Primeiro item</li>
+  <li>Segundo item</li>
+  <li>Terceiro item</li>
 </ul>
 
-<p>Quantidade de itens: <span id="quantidade-itens">0</span></p>
-
-<p>
-  <!-- Atributo onclick define um codigo JavaScript para ser executado
-       quando o botao for pressionado -->
-  <button onclick="adicionarLi()">Adicionar item</button>
-  <button onclick="removerLi()">Remover ultimo item</button>
-</p>
-
 <script>
-var qtdItens = 0;
+alert('A pagina tem ' + document.getElementsByTagName('li').length +
+    ' elementos <li>. Vamos adicionar um.');
+var novoLi = document.createElement('li');
+novoLi.textContent = 'Quarto item';
+document.getElementsByTagName('ul')[0].appendChild(novoLi);
 
-function adicionarLi() {
-  var novoLi = document.createElement('li');
-  novoLi.textContent = qtdItens++;
-  document.getElementById('minha-lista').appendChild(novoLi);
-  atualizarQtdeItens();
-}
-
-function removerLi() {
-  if (qtdItens > 0) {
-    var ul = document.getElementById('minha-lista');
-    ul.removeChild(ul.lastElementChild);
-    --qtdItens;
-    atualizarQtdeItens();
-  }
-}
-
-function atualizarQtdeItens() {
-  document.getElementById('quantidade-itens').textContent = qtdItens;
-}
+alert('Vamos adicionar mais um.');
+var novoLi = document.createElement('li');
+novoLi.textContent = 'Quinto item';
+document.getElementsByTagName('ul')[0].appendChild(novoLi);
 </script>
 
 </body>

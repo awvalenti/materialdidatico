@@ -1,27 +1,34 @@
 <!doctype html>
 <html>
 <head>
-<title>JavaScript - exemplo 3</title>
+<title>JavaScript - exemplo 2</title>
 </head>
 <body>
 
-<ul>
-  <li>Primeiro item</li>
-  <li>Segundo item</li>
-  <li>Terceiro item</li>
-</ul>
+<section id="s1" class="c1">
+  <h2>Primeira sessao</h2>
+</section>
+
+<section id="s2" class="c2">
+  <h2>Segunda sessao</h2>
+</section>
 
 <script>
-alert('A pagina tem ' + document.getElementsByTagName('li').length +
-    ' elementos <li>. Vamos adicionar um.');
-var novoLi = document.createElement('li');
-novoLi.textContent = 'Quarto item';
-document.getElementsByTagName('ul')[0].appendChild(novoLi);
+// document.getElementsByTagName encontra todos os elementos do documento
+// do tipo especificado.
 
-alert('Vamos adicionar mais um.');
-var novoLi = document.createElement('li');
-novoLi.textContent = 'Quinto item';
-document.getElementsByTagName('ul')[0].appendChild(novoLi);
+// ".id" obtem o valor do atributo id. Pode-se fazer isso com qualquer
+// atributo para obter ou alterar seu valor. Uma excecao e' o atributo class,
+// que deve ser acessado com ".className", em vez de ".class".
+
+var secoes = document.getElementsByTagName('section');
+document.write('<p>Esta pagina tem ' + secoes.length + ' secoes</p>');
+
+document.write('<p>Id da primeira: ' + secoes[0].id + '</p>');
+document.write('<p>Classe da primeira: ' + secoes[0].className + '</p>');
+
+document.write('<p>Id da segunda: ' + secoes[1].id + '</p>');
+document.write('<p>Classe da segunda: ' + secoes[1].className + '</p>');
 </script>
 
 </body>
