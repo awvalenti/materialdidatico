@@ -16,15 +16,31 @@
 </head>
 
 <body>
-  <!-- Para facilitar, podemos identificar um elemento com o atributo id -->
+  <!--
+    JavaScript começa a ficar mais interessante quando há interação com usuário.
+    Uma das maneiras de fazer isso é criando eventos para os elementos HTML.
+
+    Um evento é o acontecimento de alguma ação, como um clique de mouse,
+    pressionamento de tecla etc.
+
+    No tratamento de um evento, podemos executar código JavaScript para
+    interagir com o usuário. Um exemplo comum é a modificação do DOM (ou seja,
+    da página) após alguma ação do usuário.
+
+    O jeito mais fácil de definir um tratamento de evento é por meio de
+    atributos HTML específicos, como onclick, onmouseenter, onmousemove etc.
+  -->
+
+  <!-- Um parágrafo que mostra a quantidade de itens da lista sendo exibidos -->
+  <p>Quantidade de itens: <span id="quantidade-itens">0</span></p>
+
+  <!-- Uma lista de itens, inicialmente vazia -->
   <ul id="minha-lista">
   </ul>
 
-  <p>Quantidade de itens: <span id="quantidade-itens">0</span></p>
-
   <p>
-    <!-- Atributo onclick define um codigo JavaScript para ser executado
-    quando o botao for pressionado -->
+    <!-- Dois botões, com atributos onclick dizendo quais funções JavaScript
+        serão chamadas quando cada botão for clicado -->
     <button onclick="adicionarLi()">Adicionar item</button>
     <button onclick="removerLi()">Remover ultimo item</button>
   </p>

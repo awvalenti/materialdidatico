@@ -8,16 +8,21 @@
 
 <body>
   <section id="s1" class="c1">
-    <h2>Primeira sessao</h2>
+    <h2>Primeira seção</h2>
   </section>
 
   <section id="s2" class="c2">
-    <h2>Segunda sessao</h2>
+    <h2>Segunda seção</h2>
   </section>
 
   <script>
-  // document.getElementsByTagName encontra todos os elementos do documento
-  // do tipo especificado.
+  // "document.getElementsByTagName" encontra todos os elementos do documento
+  // do tipo especificado. O resultado é um vetor contendo 0, 1 ou vários
+  // elementos. Por exemplo, "document.getElementsByTagName('p')" procura
+  // todos os parágrafos da página.
+
+  // Alguns elementos possuem um atributo id. Exemplo:
+  //   <section id="s1">
 
   // ".id" obtem o valor do atributo id. Pode-se fazer isso com qualquer
   // atributo para obter ou alterar seu valor. Uma excecao e' o atributo class,
@@ -31,6 +36,10 @@
 
   document.write('<p>Id da segunda: ' + secoes[1].id + '</p>');
   document.write('<p>Classe da segunda: ' + secoes[1].className + '</p>');
+
+  var elementoMeta = document.getElementsByTagName('meta')[0];
+  document.write('<p>A codificação de caracteres usada foi ' +
+      elementoMeta.charset + '</p>');
   </script>
 </body>
 

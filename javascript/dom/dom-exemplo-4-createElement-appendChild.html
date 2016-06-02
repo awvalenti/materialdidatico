@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript - exemplo 4</title>
+</head>
+
+<body>
+  <ul>
+    <li>Primeiro item</li>
+    <li>Segundo item</li>
+    <li>Terceiro item</li>
+  </ul>
+
+  <script>
+  // "document.write" pode ser usado para inserir mais conteúdo ao fim
+  // da página.
+
+  // Uma outra maneira de criar conteúdo novo, sem adicioná-lo imediatamente
+  // à página, é o comando "document.createElement". Por exemplo:
+  //   var novoParagrafo = document.createElement('p');
+
+  // Depois disso, pode-se usar o método "appendChild" para acrescentar
+  // aquele novo elemento. Diferentemente do "document.write", "appendChild"
+  // permite acrescentar o novo elemento a qualquer parte da página, não
+  // somente no fim.
+
+  var todosOsLi = document.getElementsByTagName('li');
+
+  alert('A pagina tem ' + todosOsLi.length + ' elementos li. Vamos adicionar' +
+      ' um novo. Pressione enter e veja a diferença.');
+
+  // Cria um novo elemento na memória do navegador
+  var novoLi1 = document.createElement('li');
+
+  // Define o conteúdo do novo elemento
+  novoLi1.textContent = 'Quarto item';
+
+  // Acrescenta-o ao DOM. Após a execução desta linha de código,
+  // será possível vê-lo no corpo da página.
+  document.getElementsByTagName('ul')[0].appendChild(novoLi1);
+
+  alert('Vamos adicionar mais um.');
+  var novoLi2 = document.createElement('li');
+  novoLi2.textContent = 'Quinto item';
+  document.getElementsByTagName('ul')[0].appendChild(novoLi2);
+
+  document.write('<p>Agora, presseione F12, clique em elements e veja como' +
+      ' ficou o DOM. Compare-o com o código HTML original.</p>')
+  </script>
+</body>
+
+</html>
