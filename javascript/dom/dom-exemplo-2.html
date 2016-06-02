@@ -1,19 +1,30 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>JavaScript - exemplo 1</title>
+  <meta charset="utf-8">
+  <title>JavaScript - exemplo 2</title>
 </head>
+
 <body>
+  <script>
+  // A API DOM permite consultar e modificar o conteúdo do DOM, ou seja,
+  // dos elementos HTML presentes na página.
 
-<script>
-document.write('<p>Titulo desta pagina: ' +
-    document.head.children[0].textContent + '</p>');
-// "document.head" obtem o elemento <head>. ".children" obtem os filhos
-// de <head>. "[0]" indexa o vetor de filhos de <head>, obtendo o primeiro
-// (e unico) filho: o elemento <title>. ".textContent" obtem o texto
-// contido dentro do elemento <title>.
-</script>
+  // Por exemplo, para acessar o elemento head, usa-se "document.head".
+  // Para acessar os filhos de head, usa-se "document.head.children".
 
+  // Para obtermos o primeiro filho de head, podemos indexar children
+  // como se fosse um vetor: "document.head.children[0]",
+  // "document.head.children[1]".
+
+  document.write('<p>Elemento title: ' + document.head.children[1] + '</p>');
+
+  // Usa-se ".textContent" para obter o texto contido dentro de um elemento.
+
+  document.write('<p>Conteúdo do elemento title: ' +
+  document.head.children[1].textContent + '</p>');
+  </script>
 </body>
+
 </html>
