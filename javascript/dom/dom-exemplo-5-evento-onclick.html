@@ -5,14 +5,8 @@
   <meta charset="utf-8">
   <title>JavaScript - exemplo 5</title>
 
-  <style>
-  ul#minha-lista {
-    width: 5em;
-    height: 20em;
-    overflow: auto;
-    border: thin solid black;
-  }
-  </style>
+  <!-- Usando arquivo CSS externo -->
+  <link rel="stylesheet" href="dom-exemplo-5-evento-onclick.css">
 </head>
 
 <body>
@@ -45,29 +39,8 @@
     <button onclick="removerLi()">Remover ultimo item</button>
   </p>
 
-  <script>
-  var qtdItens = 0;
-
-  function adicionarLi() {
-    var novoLi = document.createElement('li');
-    novoLi.textContent = qtdItens++;
-    document.getElementById('minha-lista').appendChild(novoLi);
-    atualizarQtdeItens();
-  }
-
-  function removerLi() {
-    if (qtdItens > 0) {
-      var ul = document.getElementById('minha-lista');
-      ul.removeChild(ul.lastElementChild);
-      --qtdItens;
-      atualizarQtdeItens();
-    }
-  }
-
-  function atualizarQtdeItens() {
-    document.getElementById('quantidade-itens').textContent = qtdItens;
-  }
-  </script>
+  <!-- Usando arquivo JavaScript externo -->
+  <script src="dom-exemplo-5-evento-onclick.js"></script>
 </body>
 
 </html>
