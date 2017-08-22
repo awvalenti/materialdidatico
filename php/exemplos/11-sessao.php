@@ -1,3 +1,8 @@
+<?php
+  // Necessario chamar esta funcao logo no comeco da pagina
+  // quando a pagina usa sessao
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,9 +11,6 @@
   </head>
   <body>
     <?php
-      // Necessario chamar esta funcao quando a pagina usa sessao
-      session_start();
-
       if (isset($_POST['numero'])) {
         // Enviou formulario de armazenar numero
 
