@@ -1,29 +1,29 @@
 # Introdução a JavaScript
 
 ## Variáveis
-São declaradas com ```var```.
+São declaradas com ```let``` (podem ser alteradas) ou ```const``` (inalteráveis).
 ```javascript
-var a = 1;
-var b = 2;
+let a = 1;
+const b = 2;
 a = 3;
-b += a + 1;
+b += a + 1;   // Erro: tentou alterar constante b
 ```
 
 ## Saída padrão
 ```javascript
 alert('Ola, mundo! (em janela modal)');
-console.log('Ola, mundo! (no console de JavaScript do navegador)');
+console.log('Ola, mundo! (no console de JavaScript do navegador ou do Node)');
 ```
 
 ## Entrada padrão (strings)
 ```javascript
-var nome = prompt('Digite seu nome');
+const nome = prompt('Digite seu nome');
 alert('Ola, ' + nome + '!');
 ```
 
 ## Entrada padrão (números)
 ```javascript
-var idade = Number(prompt('Digite sua idade'));
+const idade = Number(prompt('Digite sua idade'));
 alert('Voce tem ' + idade + ' anos de idade');
 ```
 
@@ -81,15 +81,15 @@ function g(a, b, c) {
 
 Variáveis não são tipadas. Podem receber valores de qualquer tipo.
 ```javascript
-var x = 1;
-var y = 'dois';
-var z = [3, 4];
+let x = 1;
+let y = 'dois';
+let z = [3, 4];
 z = 5.0;  // z tinha um vetor, agora tem um número. O antigo vetor é perdido.
 ```
 
 ## Vetores
 ```javascript
-var v = [0, 10, 20, 30];
+const v = [0, 10, 20, 30];
 
 // Tamanho
 v.length  // 4
@@ -104,7 +104,7 @@ v[3]    // 30
 v.slice(1, 3)  // [10, 20]
 
 // Fazer cópia do vetor inteiro
-var copiaDeV = v.slice();
+const copiaDeV = v.slice();
 ```
 
 ## Objetos
@@ -113,17 +113,17 @@ para serem criados. A notação ```{}``` pode ser usada para criar objetos
 literais, diretamente no código, com as propriedades especificadas.
 
 ```javascript
-var pessoa1 = {
+const pessoa1 = {
   nome: 'Joao',
   idade: 23
 };
 
-var pessoa2 = {
+const pessoa2 = {
   nome: 'Maria',
   idade: 2
 };
 
-var obj = {
+const obj = {
   a: 1,
   b: 2,
   c: 3,
@@ -168,9 +168,9 @@ o valor e o tipo.
 ```
 
 ## Condicionais, blocos, laços
-Tudo igual a Java, exceto que, no ```for (int i = ...)```, troca-se ```int``` por ```var```.
+Tudo igual a Java, exceto que, no ```for (int i = ...)```, troca-se ```int``` por ```let```.
 ```javascript
-for (var i = 0; i < 10; ++i) {
+for (let i = 0; i < 10; ++i) {
   console.log(i);
 }
 ```
@@ -197,37 +197,38 @@ function areaDoCirculo(raio) {
 
 ## Classes
 Apesar de JavaScript não exigir uma classe para criar um objeto, classes podem
-ser criadas. Na versão mais nova do JavaScript, existe a palavra reservada
-```class```. Porém, o jeito tradicional de criar classes é usando funções.
+ser criadas. O jeito antigo de criar classes é usando funções. Nas versões mais
+novas do JavaScript, existe a palavra reservada ```class```.
 
-Qualquer função pode ser usada como classe. Nesse caso, ela atua como construtor
-e, por convenção, seu nome deve começar com letra maiúscula. Outra convenção
+Por convenção, nomes de classes começam com maiúscula. Outra convenção
 é o uso de ```_``` para iniciar nomes de propriedades ou métodos privados.
 JavaScript não faz nenhum controle de acesso. Cabe ao programador não chamar
 métodos privados fora da classe.
 
 ```javascript
-// Construtor da classe Pessoa
-function Pessoa(nome, idade) {
-  this._nome = nome;      // Cria uma nova propriedade no objeto chamada _nome
-  this._idade = idade;    // Cria uma nova propriedade no objeto chamada _idade
+class Pessoa {
+  // Definição do construtor
+  constructor(nome, idade) {
+    this._nome = nome;      // Definição da propriedade _nome
+    this._idade = idade;    // Definição da propriedade _idade
+  }
+
+  // Definição de um método
+  maiorDeIdade() {
+    return this._idade >= 18;
+  }
+
+  // Definição de outro método
+  getNome() {
+    return this._nome;
+  }
 }
 
-// Definição de um método da classe Pessoa
-Pessoa.prototype.maiorDeIdade = function() {
-  return this._idade >= 18;
-};
-
-// Definição de outro método da classe Pessoa
-Pessoa.prototype.getNome = function() {
-  return this._nome;
-};
-
 // Criação de um objeto
-var ulisses = new Pessoa('Ulisses', 39);
+const ulisses = new Pessoa('Ulisses', 39);
 
 // Criação de outro objeto
-var iara = new Pessoa('Iara', 42);
+const iara = new Pessoa('Iara', 42);
 
 // Chamada de um método
 if (ulisses.maiorDeIdade()) {
@@ -250,7 +251,7 @@ será interrompido. Você terá a oportunidade de executar linha por linha,
 conferir os valores das variáveis etc.
 ```javascript
 console.log(1);
-for (var i = 0; i < 10; ++i) {
+for (let i = 0; i < 10; ++i) {
   console.log(i);
   if (i >= 5) {
     debugger;
