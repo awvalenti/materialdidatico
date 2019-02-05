@@ -5,23 +5,23 @@ São declaradas com ```let``` (podem ser alteradas) ou ```const``` (inalterávei
 ```javascript
 let a = 1;
 const b = 2;
-a = 3;
-b += a + 1;   // Erro: tentou alterar constante b
+a = 3;        // OK: pode alterar com let
+b += a + 1;   // Erro: tentou alterar com const
 ```
 
 ## Saída padrão
 ```javascript
-alert('Ola, mundo! (em janela modal)');
-console.log('Ola, mundo! (no console de JavaScript do navegador ou do Node)');
+alert('Ola, mundo! (janela modal, somente navegador)');
+console.log('Ola, mundo! (console do navegador ou Node)');
 ```
 
-## Entrada padrão (strings)
+## Entrada padrão de strings (somente navegador)
 ```javascript
 const nome = prompt('Digite seu nome');
 alert('Ola, ' + nome + '!');
 ```
 
-## Entrada padrão (números)
+## Entrada padrão de números (somente navegador)
 ```javascript
 const idade = Number(prompt('Digite sua idade'));
 alert('Voce tem ' + idade + ' anos de idade');
@@ -32,7 +32,7 @@ alert('Voce tem ' + idade + ' anos de idade');
 // Esta linha começa com duas barras e é um comentário
 ```
 
-## Principais tipos de dados
+## Tipos de dados
 ```javascript
 // Booleano (boolean)
 true
@@ -47,18 +47,20 @@ false
 // Texto (string)
 'Um texto usando aspas simples'
 "Um texto usando aspas duplas"
+`Um texto interpolando string: 1 + 2 = ${1 + 2}`
 
 
 // Objeto (object)
-null
-
 {
-  'manga': 4,
-  'laranja': 12,
-  'banana': 15
+  manga: 4,
+  laranja: 12,
+  banana: 15
 }
 
 {12: 'doze', 34: 'trinta e quatro'}
+
+// Nomes de propriedades são sempre strings.
+// manga vira "manga", 12 vira "12".
 
 
 // Vetor (a rigor, é tudo object)
@@ -77,6 +79,28 @@ function f() {
 function g(a, b, c) {
   return a + b + c;
 }
+
+
+// undefined
+undefined
+
+
+// null é considerado objeto
+null
+```
+
+Para verificar tipos de dados, use o operador ```typeof```.
+```javascript
+typeof true
+typeof 10
+typeof 'texto'
+typeof {}
+typeof function() {}
+typeof undefined
+
+typeof null
+typeof ['meu-vetor']
+typeof console.log
 ```
 
 Variáveis não são tipadas. Podem receber valores de qualquer tipo.
@@ -85,6 +109,28 @@ let x = 1;
 let y = 'dois';
 let z = [3, 4];
 z = 5.0;  // z tinha um vetor, agora tem um número. O antigo vetor é perdido.
+```
+
+Cuidado: o operador ```+``` tem significados diferentes dependendo dos tipos
+de dados envolvidos. Para números, soma. Para pelo menos uma string, concatena.
+
+```Number(valor)``` pode ser usado para forçar a conversão e fazer a soma.
+
+Já o operador ```-``` sempre subtrai, mesmo envolvendo strings. Ocorre conversão
+automática.
+
+```javascript
+ 3  +  2    // 5
+'3' +  2    // '32'
+ 3  + '2'   // '32'
+'3' + '2'   // '32'
+
+3 + Number('2')   // 5
+
+ 3  -  2    // 1
+'3' -  2    // 1
+ 3  - '2'   // 1
+'3' - '2'   // 1
 ```
 
 ## Vetores
@@ -105,6 +151,18 @@ v.slice(1, 3)  // [10, 20]
 
 // Fazer cópia do vetor inteiro
 const copiaDeV = v.slice();
+
+// Insere novo elemento
+v[4] = 40;
+
+// Outra forma de inserir novo elemento
+v.push(50);
+
+// Reduz tamanho, removendo elementos
+v.length = 2;
+
+// Aumenta tamanho, deixando posições vazias
+v.length = 10;
 ```
 
 ## Objetos
@@ -147,6 +205,14 @@ obj.a = 10;
 obj['b'] = 20;
 obj.c = obj.a + obj.b;
 console.log(obj['c']);   // 30
+
+// Acrescentando propriedade
+obj.d = 40;
+
+// Removendo propriedade
+delete obj.str;
+
+console.log(obj);   // { a: 10, b: 20, c: 30, d: 40 }
 ```
 Mais informações sobre objetos no [guia do MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
@@ -168,11 +234,22 @@ o valor e o tipo.
 ```
 
 ## Condicionais, blocos, laços
-Tudo igual a Java, exceto que, no ```for (int i = ...)```, troca-se ```int``` por ```let```.
+```while```, ```do``` e ```for``` iguais a Java, exceto:
+```java
+// for em Java: int
+for (int i = 0; i < 10; ++i) {}
+```
 ```javascript
-for (let i = 0; i < 10; ++i) {
-  console.log(i);
-}
+// for em JavaScript: let
+for (let i = 0; i < 10; ++i) {}
+```
+```java
+// foreach em Java: com tipo e com dois-pontos
+for (MinhaClasse meuObjeto : lista) {}
+```
+```javascript
+// foreach em JavaScript: sem tipo e com of
+for (meuObjeto of lista) {}
 ```
 
 ## Funções
@@ -195,15 +272,49 @@ function areaDoCirculo(raio) {
 }
 ```
 
+Lembrando estas definições:
+<dl>
+<dt>Parâmetro</dt><dd>Variável declarada na função</dd>
+<dt>Argumento</dt><dd>Valor efetivamente passado para a função</dd>
+</dl>
+```javascript
+// Declaração da função: aqui, vêm os parâmetros
+function f(parametro1, parametro2) {}
+
+// Chamada da função: aqui, vêm os argumentos
+f('argumento1', 'argumento2');
+```
+
+Na chamada, podem-se passar argumentos de quaisquer tipos.
+```javascript
+// Tipo esperado foi passado: string
+dizerOla('Joao');
+
+// Tipo inesperado foi passado: objeto
+dizerOla({ ops: 'vai dar ruim?' });
+```
+
+Na chamada, pode-se passar qualquer quantidade de argumentos.
+```javascript
+// Só um argumento: dentro do esperado
+dizerOla('Joao');
+
+// Nenhum argumento: parâmetro ficará com valor undefined
+dizerOla();
+
+// Mais de um argumento: o primeiro vai normalmente, os outros são ignorados
+dizerOla('Maria', 'vai', 'com', 'as', 'outras');
+```
+
 ## Classes
-Apesar de JavaScript não exigir uma classe para criar um objeto, classes podem
-ser criadas. O jeito antigo de criar classes é usando funções. Nas versões mais
-novas do JavaScript, existe a palavra reservada ```class```.
+JavaScript não exige, mas permite, a definição de classes para criar objetos.
+Nas versões antigas, usava-se ```function``` e ```prototype```.
+Nas versões novas, usa-se a palavra reservada ```class```.
 
 Por convenção, nomes de classes começam com maiúscula. Outra convenção
 é o uso de ```_``` para iniciar nomes de propriedades ou métodos privados.
-JavaScript não faz nenhum controle de acesso. Cabe ao programador não chamar
-métodos privados fora da classe.
+JavaScript não faz nenhum controle de acesso. Cabe ao programador só acessar
+propriedades privadas quando estiver dentro da classe.
 
 ```javascript
 class Pessoa {
@@ -244,11 +355,15 @@ if (iara.maiorDeIdade()) {
 ```
 
 ## Depuração
-O comando ```debugger``` pode ser colocado em qualquer parte do código.
-Ele terá efeito somente se o console do navegador estiver aberto.
-Quando a linha do ```debugger``` for executada, o programa
+O comando ```debugger``` funciona como breakpoint.
+
+Quando este comando for executado, o programa
 será interrompido. Você terá a oportunidade de executar linha por linha,
 conferir os valores das variáveis etc.
+
+No navegador, o console precisa estar aberto. No VSCode, o programa precisa
+ser executado com F5, em vez de CTRL+F5.
+
 ```javascript
 console.log(1);
 for (let i = 0; i < 10; ++i) {
