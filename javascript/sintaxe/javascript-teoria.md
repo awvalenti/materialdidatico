@@ -222,15 +222,15 @@ O operador ```==``` compara valor, mas desconsidera o tipo. Assim, o número
 o valor e o tipo.
 
 ```javascript
-1 == 1     // true
-1 == '1'   // true
-1 === 1    // true
-1 === '1'  // false
+1 ==   1    // true
+1 ==  '1'   // true
+1 ===  1    // true
+1 === '1'   // false
 
-1 != 1     // false
-1 != '1'   // false
-1 !== 1    // false
-1 !== '1'  // true
+1 !=   1    // false
+1 !=  '1'   // false
+1 !==  1    // false
+1 !== '1'   // true
 ```
 
 ## Condicionais, blocos, laços
