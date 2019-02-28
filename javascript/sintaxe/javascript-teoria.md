@@ -277,6 +277,7 @@ Lembrando estas definições:
 <dt>Parâmetro</dt><dd>Variável declarada na função</dd>
 <dt>Argumento</dt><dd>Valor efetivamente passado para a função</dd>
 </dl>
+
 ```javascript
 // Declaração da função: aqui, vêm os parâmetros
 function f(parametro1, parametro2) {}
