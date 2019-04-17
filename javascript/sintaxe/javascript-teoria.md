@@ -1,18 +1,23 @@
 # Introdução a JavaScript
 
 ## Variáveis
-São declaradas com ```let``` (podem ser alteradas) ou ```const``` (inalteráveis).
+
+### Declaradas com let: alteráveis
 ```javascript
 let a = 1;
+a = 3;        // OK: let permite alterar
+```
+
+### Declaradas com const: inalteráveis
+```javascript
 const b = 2;
-a = 3;        // OK: pode alterar com let
-b += a + 1;   // Erro: tentou alterar com const
+b = 3;   // Erro: const não permite alterar
 ```
 
 ## Saída padrão
 ```javascript
-alert('Ola, mundo! (janela modal, somente navegador)');
-console.log('Ola, mundo! (console do navegador ou Node)');
+alert('Ola, mundo! alert só funciona no navegador e exibe uma janelinha.');
+console.log('Ola, mundo! console funciona no Node.js e no navegador (F12 > console).');
 ```
 
 ## Entrada padrão de strings (somente navegador)
