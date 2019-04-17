@@ -14,10 +14,17 @@ const b = 2;
 b = 3;   // Erro: const não permite alterar
 ```
 
-## Saída padrão
+## Saída
+
+### alert
 ```javascript
 alert('Ola, mundo! alert só funciona no navegador e exibe uma janelinha.');
-console.log('Ola, mundo! console funciona no Node.js e no navegador (F12 > console).');
+```
+
+### console.log
+```javascript
+console.log('Ola, mundo! console funciona em qualquer ambiente. ' +
+  'No navegador, prressionar F12 e clicar em console.');
 ```
 
 ## Entrada padrão de strings (somente navegador)
