@@ -1,9 +1,5 @@
 # Exercícios JavaScript
 
-Para cada exercício a seguir, crie um arquivo com o código da resolução. Você pode chamar os arquivos de ```exercicio-1.js```, ```exercicio-2.js``` e assim por diante.
-
-Para executar, você pode colar diretamente o código JavaScript no console do navegador, ou pode criar uma página HTML no mesmo diretório do arquivo js, referenciando-o. Assim, quando você abrir aquela página no navegador, o código será executado e o resultado deverá aparecer no console, se você tiver usado ```console.log```.
-
 Parar criar uma página HTML referenciando um arquivo JavaScript, use o exemplo a seguir:
 
 ```html
@@ -29,11 +25,11 @@ Parar criar uma página HTML referenciando um arquivo JavaScript, use o exemplo 
 1. Usando a função ```prompt```, leia o nome do usuário e imprima ```"Ola, [nome do usuário]!"```. Use a função que preferir.
 
 1. Em cada trecho de código a seguir, modifique somente o valor da variável ```a``` para que a saída seja ```OK```:
-    1. ```var a = ''; if (typeof a === 'boolean') console.log('OK');```
+    1. ```a = ''; if (typeof a === 'boolean') console.log('OK');```
 
-    1. ```var a = ''; if (typeof a === 'number') console.log('OK');```
+    1. ```a = ''; if (typeof a === 'number') console.log('OK');```
 
-    1. ```var a = ''; if (typeof a === 'object') console.log('OK');```
+    1. ```a = ''; if (typeof a === 'object') console.log('OK');```
 
 1. Imprima todos os números inteiros de 0 até 9 usando um laço ```for```.
 
