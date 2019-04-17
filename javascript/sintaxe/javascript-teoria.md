@@ -16,24 +16,25 @@ b = 3;   // Erro: const não permite alterar
 
 ## Saída
 
-### alert
+### alert (somente navegador)
 ```javascript
-alert('Ola, mundo! alert só funciona no navegador e exibe uma janelinha.');
+alert('Ola, mundo! Exibe uma janelinha.');
 ```
 
-### console.log
+### console.log (qualquer ambiente JavaScript)
 ```javascript
-console.log('Ola, mundo! console funciona em qualquer ambiente. ' +
-  'No navegador, prressionar F12 e clicar em console.');
+console.log('Ola, mundo! No navegador, prressionar F12 e clicar em console.');
 ```
 
-## Entrada padrão de strings (somente navegador)
+## Entrada com prompt (somente navegador)
+
+### Strings 
 ```javascript
 const nome = prompt('Digite seu nome');
 alert('Ola, ' + nome + '!');
 ```
 
-## Entrada padrão de números (somente navegador)
+### Números
 ```javascript
 const idade = Number(prompt('Digite sua idade'));
 alert('Voce tem ' + idade + ' anos de idade');
