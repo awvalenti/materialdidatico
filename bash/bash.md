@@ -317,3 +317,11 @@ echo $f5_local
 - https://learnxinyminutes.com/docs/bash/ (guia rápido)
 - https://www.gnu.org/software/bash/manual/ (manual de referência)
 
+## Apresentação
+- Terminal: Terminator 2.0.1 (https://github.com/gnome-terminator/terminator)
+- Tema: Ambience (texto, fundo e paleta de cores)
+- Opacidade: 98%
+- Fonte: Fira Code Medium 12 (https://github.com/tonsky/FiraCode)
+- Editor: vim-gtk3
+- Visualizador: bat (https://github.com/sharkdp/bat)
+
