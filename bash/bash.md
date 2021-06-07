@@ -18,6 +18,7 @@
 - ash, bash, dash (sh), fish, zsh
 - Bash é o mais comum
 - Cada um tem/é uma linguagem de scripts própria
+- Windows: WSL + Ubuntu, Git Bash
 
 ## O que eu posso fazer sabendo shell scripting?
 - Aumentar produtividade no terminal (aliases, funções, prompt)
