@@ -4,12 +4,14 @@
 
 ### Terminal ou Console
 - Dispositivo de comunicação usando caracteres (físico ou virtual)
+  - https://vialinux.blogspot.com/2013/02/diferenca-entre-shell-console-e-terminal.html
+  - https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell
 - iTerm, Prompt de comando/PowerShell/Windows Terminal
 - (GNOME|MATE|xfce|LX) Terminal, Konsole, Terminator, Guake, Alacritty
 
 ### Shell
 - Software que interpreta comandos
-- Interface (ou front-end) entre usuário e o kernel
+- Interface entre a pessoa e o kernel
 - Imagens:
   - http://www.cravebits.com/wp-content/uploads/2014/12/Raw-whole-walnuts1.jpg
   - https://www.researchgate.net/profile/Ali-Jahanban-Esfahlan/publication/335177625/figure/fig1/AS:792135804669952@1565871301027/An-unripe-and-young-walnut-fruit-before-its-husk-cracks-and-the-ripe-form-of-the-fruit.ppm
@@ -17,13 +19,13 @@
 - Bash é o mais comum
 - Cada um tem/é uma linguagem de scripts própria
 
-## O que dá para fazer com shell scripting?
-- Automatizar tarefas (renomear em massa, build de projetos)
+## O que eu posso fazer sabendo shell scripting?
 - Aumentar produtividade no terminal (aliases, funções, prompt)
-- Entender scripts (.bashrc, install.sh, nvm.sh)
-- Criar aplicações (gerenciadores de arquivos, tocador de música, jogos)
-  - https://github.com/awvalenti/plainplayer
+- Automatizar tarefas (renomear em massa, build de projetos)
+- Entender scripts de terceiros (.bashrc, install.sh, nvm.sh)
+- Criar aplicativos (jogos, tocador de música)
   - http://bruxy.regnet.cz/web/linux/EN/housenka-bash-game
+  - https://github.com/awvalenti/plainplayer
 
 ## Comandos iniciais de shell
 - ls: listar arquivos e diretórios
