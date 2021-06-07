@@ -3,37 +3,27 @@
 ## Definições
 
 ### Terminal ou Console
-- Dispositivo (físico ou virtual) que permite comunicação usando caracteres
-- Algumas opções:
-  - Mac
-    - iTerm
-  - Windows
-    - CMD
-    - PowerShell
-    - Windows Terminal
-  - Linux
-    - XTerm
-    - GNOME Terminal / MATE Terminal / xfce4-terminal / LXTerminal / Konsole
-    - Terminator
-    - Guake / Yakuake
-    - Alacritty / Kitty
+- Dispositivo de comunicação usando caracteres (físico ou virtual)
+- iTerm, Prompt de comando/PowerShell/Windows Terminal
+- (GNOME|MATE|xfce|LX) Terminal, Konsole, Terminator, Guake, Alacritty
 
 ### Shell
 - Software que interpreta comandos
-- Algumas opções:
-  - ash
-  - bash
-  - dash (sh)
-  - fish
-  - zsh
-- Bash é o shell mais comum
-- Cada um tem sua própria linguagem de scripts
+- Interface (ou front-end) entre usuário e o kernel
+- Imagens:
+  - http://www.cravebits.com/wp-content/uploads/2014/12/Raw-whole-walnuts1.jpg
+  - https://www.researchgate.net/profile/Ali-Jahanban-Esfahlan/publication/335177625/figure/fig1/AS:792135804669952@1565871301027/An-unripe-and-young-walnut-fruit-before-its-husk-cracks-and-the-ripe-form-of-the-fruit.ppm
+- ash, bash, dash (sh), fish, zsh
+- Bash é o mais comum
+- Cada um tem/é uma linguagem de scripts própria
 
 ## O que dá para fazer com shell scripting?
 - Automatizar tarefas (renomear em massa, build de projetos)
 - Aumentar produtividade no terminal (aliases, funções, prompt)
 - Entender scripts (.bashrc, install.sh, nvm.sh)
 - Criar aplicações (gerenciadores de arquivos, tocador de música, jogos)
+  - https://github.com/awvalenti/plainplayer
+  - http://bruxy.regnet.cz/web/linux/EN/housenka-bash-game
 
 ## Comandos iniciais de shell
 - ls: listar arquivos e diretórios
@@ -150,6 +140,18 @@ ls | grep x | wc -l  # quantos arquivos e diretórios contendo x
 # OBS: evite processar a saída de ls, principalmente em scripts.
 # Teoricamente, o comando correto a ser usado é o find.
 # Na prática, muitas vezes, é bem difícil usá-lo.
+
+# glob
+echo *
+echo *.tx?
+echo ~
+echo ~/Área\ de\ Trabalho
+echo ~root
+echo ~bin
+
+# !!
+fdisk -l
+sudo !!
 
 # for
 for arquivo in *
@@ -314,14 +316,20 @@ echo $f5_local
 ```
 
 ## Referências
-- https://learnxinyminutes.com/docs/bash/ (guia rápido)
-- https://www.gnu.org/software/bash/manual/ (manual de referência)
+- Este material:
+  - https://github.com/awvalenti/materialdidatico/tree/master/bash
+- Resumo:
+  - https://learnxinyminutes.com/docs/bash/
+- Manual de referência:
+  - https://www.gnu.org/software/bash/manual/
+- "Como é que faz xpto com bash?"
+  - https://duckduckgo.com
 
 ## Apresentação
-- Terminal: Terminator 2.0.1 (https://github.com/gnome-terminator/terminator)
-- Tema: Ambience (texto, fundo e paleta de cores)
-- Opacidade: 98%
-- Fonte: Fira Code Medium 12 (https://github.com/tonsky/FiraCode)
-- Editor: vim-gtk3
-- Visualizador: bat (https://github.com/sharkdp/bat)
+- Terminator 2.0.1 (https://github.com/gnome-terminator/terminator)
+- Tema Ambience
+- Opacidade 98%
+- Fonte Fira Code Medium 12 (https://github.com/tonsky/FiraCode)
+- vim-gtk3
+- bat (https://github.com/sharkdp/bat)
 
