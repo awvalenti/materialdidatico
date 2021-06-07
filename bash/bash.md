@@ -6,8 +6,24 @@
 - Dispositivo de comunicação usando caracteres (físico ou virtual)
   - https://vialinux.blogspot.com/2013/02/diferenca-entre-shell-console-e-terminal.html
   - https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell
-- iTerm, Prompt de comando/PowerShell/Windows Terminal
-- (GNOME|MATE|xfce|LX) Terminal, Konsole, Terminator, Guake, Alacritty
+
+- Algumas opções:
+  - Mac:
+    - iTerm
+
+  - Windows:
+    - Prompt de comando (CMD)
+    - PowerShell
+    - Windows Terminal
+
+  - Android:
+    - Termux
+
+  - Linux desktop:
+    - (GNOME|MATE|xfce|LX) Terminal, Konsole
+    - Terminator
+    - Guake, Yakuake
+    - Alacritty, Kitty
 
 ### Shell
 - Software que interpreta comandos
